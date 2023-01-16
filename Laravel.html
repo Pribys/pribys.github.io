@@ -265,7 +265,7 @@
                   <p><b>Un entorno común</b></p>
                   <p>Laravel combina los mejores paquetes del ecosistema PHP para ofrecer el framework más robusto y amigable para el desarrollador disponible. Además, miles de desarrolladores con talento de todo el mundo han <a href="https://github.com/laravel/framework">contribuido al framework</a>. Quién sabe, tal vez incluso te conviertas en un colaborador de Laravel.</p>
                   <h4>El primer proyecto con Laravel</h4>
-                  <p>Antes de crear tu primer proyecto Laravel, debes asegurarte de que tu máquina local tiene PHP y <a href="https://getcomposer.org">Composer</a>instalados. Si estás desarrollando en macOS, PHP y Composer se pueden instalar a través de Homebrew. Además, recomendamos instalar <a href="https://nodejs.org/es/">Node y NPM</a>.</p>
+                  <p>Antes de crear tu primer proyecto Laravel, debes asegurarte de que tu máquina local tiene PHP y <a href="https://getcomposer.org">Composer</a> instalados. Si estás desarrollando en macOS, PHP y Composer se pueden instalar a través de Homebrew. Además, recomendamos instalar <a href="https://nodejs.org/es/">Node y NPM</a>.</p>
                   <p>Después de haber instalado PHP y Composer, puedes crear un nuevo proyecto Laravel a través del comando <code>create-project</code> de Composer:</p>
                   <pre class="prettyprint source lang-javascript"><code>composer create-project laravel/laravel example-app</code></pre>
                   <p>O bien, puedes crear nuevos proyectos Laravel mediante la instalación global del instalador de Laravel a través de Composer:</p>
@@ -326,7 +326,12 @@ php artisan serve</code></pre>
                   <p>El directorio <code>tests</code> contiene las pruebas automatizadas. Ejemplos de pruebas unitarias <a href="https://phpunit.de/">PHPUnit</a> y pruebas de características se realizan fuera de la aplicación. Cada clase de prueba debe tener como sufijo la palabra Test. Puede ejecutar sus pruebas usando los comandos <code>phpunit</code> o <code>php vendor/bin/phpunit</code>. O, si quieres una salida más detallada y pulcra de los resultados de las pruebas, puedes ejecutarlas utilizando el comando Artisan <code>php artisan test</code>.</p>
                   <h5>El directorio Vendor</h5>
                   <p>El directorio <code>vendor</code> contiene las dependencias de Composer.</p>
-
+                  <h4>El directorio App</h4>
+                  <p>La mayor parte de la aplicación se encuentra en el directorio <code>app</code>. Por defecto, este directorio tiene el nombre <code>App</code> y es autocargado por Composer utilizando el <a href="https://www.php-fig.org/psr/psr-4/">estándar de autocarga PSR-4</a>.</p>
+                  <p>El directorio <code>app</code> contiene una variedad de directorios adicionales como <code>Console</code>, <code>Http</code>, y <code>Providers</code>. Piense en los directorios <code>Console</code> y <code>Http</code> como una API en el núcleo de la aplicación. Tanto el protocolo HTTP como CLI son mecanismos para interactuar con la aplicación, pero en realidad no contienen lógica de aplicación. En otras palabras, son dos formas de emitir comandos a tu aplicación. El directorio <code>Console</code> contiene todos los comandos Artisan, mientras que el directorio <code>Http</code> contiene los controladores, middleware y peticiones.</p>
+                  <p>Otros directorios más serán generados dentro del directorio <code>app</code> cuando utilices los comandos Artisan <code>make</code> para generar clases. Así, por ejemplo, el directorio <code>app/Jobs</code> no existirá hasta que ejecutes el comando Artisan <code>make:job</code> para generar una clase job.</p>
+                  <div class="alert alert-info">Muchas de las clases en el directorio <code>app</code> pueden ser generadas por Artisan a través de comandos. Para revisar los comandos disponibles, ejecute el comando <code>php artisan list make</code> en su terminal.</div>
+                  
                 </div>
               </div>
             </article>
