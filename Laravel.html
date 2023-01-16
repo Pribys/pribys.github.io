@@ -318,8 +318,15 @@ php artisan serve</code></pre>
                   <p>El archivo <code>web.php</code> contiene rutas que el <code>RouteServiceProvider</code> coloca en el grupo de middleware web, que proporciona estado de sesión, protección CSRF y cifrado de cookies. Si tu aplicación no ofrece una API RESTful sin estado, lo más probable es que todas sus rutas estén definidas en el archivo web.php.</p>
                   <p>El archivo <code>api.php</code> contiene rutas que el <code>RouteServiceProvider</code> coloca en el grupo api middleware. Estas rutas están diseñadas para ser sin estado, por lo que las solicitudes que entran en la aplicación a través de estas rutas están diseñadas para ser autenticadas a través de <a href="https://laravel.com/docs/9.x/sanctum">tokens</a> y no tendrán acceso al estado de la sesión.</p>
                   <p>El archivo <code>console.php</code> es donde puedes definir todos los comandos de consola basados en closures. Cada cierre está vinculado a una instancia de comando permitiendo un enfoque simple para interactuar con los métodos IO de cada comando. Aunque este archivo no define rutas HTTP, define puntos de entrada (rutas) a su aplicación basados en la consola.</p>
-                  <p>El archivo <code>channels.php</code> es donde se pueden puede registrar todos los canales de transmisión de eventos que la aplicación soporta.</p>
-                
+                  <p>El archivo <code>channels.php</code> es donde se pueden puede registrar todos los canales de <a href="https://laravel.com/docs/9.x/broadcasting">transmisión de eventos</a> que la aplicación soporta.</p>
+                  <h5>El directorio Storage</h5> 
+                  <p>El directorio <code>storage</code> contiene sus registros, plantillas Blade compiladas, sesiones basadas en archivos, cachés de archivos y otros archivos generados por el framework. Este directorio está segregado en los directorios <code>app</code>, <code>framework</code> y <code>logs</code>. El directorio <code>app</code> se puede utilizar para almacenar cualquier archivo generado por su aplicación. El directorio <code>framework</code> se utiliza para almacenar los archivos y cachés generados por el framework. Por último, el directorio <code>logs</code> contiene los archivos de registro de la aplicación.</p>
+                  <p>El directorio <code>storage/app/public</code> puede utilizarse para almacenar archivos generados por el usuario, como avatares de perfil, que deben ser accesibles públicamente. Hay que crear un enlace simbólico en <code>public/storage</code> que apunte a este directorio. Puede crear el enlace usando el comando <code>php artisan storage:link Artisan</code>.</p>
+                  <h5>El directorio Tests</h5> 
+                  <p>El directorio <code>tests</code> contiene las pruebas automatizadas. Ejemplos de pruebas unitarias <a href="https://phpunit.de/">PHPUnit</a> y pruebas de características se realizan fuera de la aplicación. Cada clase de prueba debe tener como sufijo la palabra Test. Puede ejecutar sus pruebas usando los comandos <code>phpunit</code> o <code>php vendor/bin/phpunit</code>. O, si quieres una salida más detallada y pulcra de los resultados de las pruebas, puedes ejecutarlas utilizando el comando Artisan <code>php artisan test</code>.</p>
+                  <h5>El directorio Vendor</h5>
+                  <p>El directorio <code>vendor</code> contiene las dependencias de Composer.</p>
+
                 </div>
               </div>
             </article>
