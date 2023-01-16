@@ -278,6 +278,17 @@ laravel new example-app</code></pre>
 php artisan serve</code></pre>
                   <p>Una vez que hayas iniciado el servidor de desarrollo Artisan, tu aplicación será accesible en tu navegador web en <code>http://localhost:8000</code>. A continuación, estás listo para comenzar a dar tus <a href="https://laravel.com/docs/9.x/installation#next-steps">siguientes pasos</a> en el ecosistema Laravel. Por supuesto, es posible que también desees configurar una <a href="https://laravel.com/docs/9.x/installation#databases-and-migrations">base de datos</a>.</p>
                   <div class="alert alert-info">Si quieres ciertas ventajas al desarrollar una aplicación Laravel, considera el uso de uno de nuestros <a href="https://laravel.com/docs/9.x/starter-kits">kits de inicio</a>. Los kits de inicio de Laravel proporcionan un andamiaje de autenticación backend y frontend para tu nueva aplicación Laravel.</div>
+                  <h4> ... </h4>
+                  <h3>Configuración</h3>
+                  <h4>Introducción</h4>
+                  <p>Todos los archivos de configuración para el framework Laravel se almacenan en el directorio <code>config</code>. Cada opción está documentada, así que siéntete libre de revisar los archivos y familiarizarte con las opciones disponibles.</p>
+                  <p>Estos archivos de configuración te permiten configurar cosas como la información de conexión a tu base de datos, la información de tu servidor de correo, así como otros valores de configuración básicos como la zona horaria de tu aplicación y la clave de cifrado.</p>
+                  <h5>Vista general de la aplicación</h5>
+                  <p>¿Tienes prisa? Puedes obtener una rápida visión general de la configuración, los controladores y el entorno de tu aplicación mediante el comando <code>about</code> de Artisan:</p>
+                  <pre class="prettyprint source lang-javascript"><code>php artisan about</code></pre>
+                  <p>Si sólo le interesa una sección concreta de la vista general de la aplicación, puede filtrarla con la opción <code>--only</code>:</p>
+                  <pre class="prettyprint source lang-javascript"><code>php artisan about --only=environment</code></pre>
+
                 </div>
               </div>
             </article>
