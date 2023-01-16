@@ -285,9 +285,14 @@ php artisan serve</code></pre>
                   <p>Estos archivos de configuración te permiten configurar cosas como la información de conexión a tu base de datos, la información de tu servidor de correo, así como otros valores de configuración básicos como la zona horaria de tu aplicación y la clave de cifrado.</p>
                   <h5>Vista general de la aplicación</h5>
                   <p>¿Tienes prisa? Puedes obtener una rápida visión general de la configuración, los controladores y el entorno de tu aplicación mediante el comando <code>about</code> de Artisan:</p>
-                  <pre class="prettyprint source lang-javascript"><code>php artisan about</code></pre>
+                  <pre class="prettyprint source lang-php"><code>php artisan about</code></pre>
                   <p>Si sólo le interesa una sección concreta de la vista general de la aplicación, puede filtrarla con la opción <code>--only</code>:</p>
-                  <pre class="prettyprint source lang-javascript"><code>php artisan about --only=environment</code></pre>
+                  <pre class="prettyprint source lang-php"><code>php artisan about --only=environment</code></pre>
+                  <h4>Configuración del entorno</h4>
+                  <p>A menudo es útil tener diferentes valores de configuración basados en el entorno donde se ejecuta la aplicación. Por ejemplo, es posible que desee utilizar un controlador de caché diferente a nivel local que en su servidor de producción.</p>
+                  <p>Para hacer esto más fácil, Laravel utiliza la librería PHP <code>DotEnv</code>. En una nueva instalación de Laravel, el directorio raíz de su aplicación contendrá un archivo <code>.env.example</code> que define muchas variables de entorno comunes. Durante el proceso de instalación de Laravel, este archivo se copiará automáticamente a <code>.env</code>.</p>
+                  <p>El archivo .env por defecto de Laravel contiene algunos valores de configuración comunes que pueden diferir en función de si su aplicación se ejecuta localmente o en un servidor web de producción. Estos valores se recuperan de varios archivos de configuración de Laravel dentro del directorio config utilizando la función <code>env</code> de Laravel.</p>
+                  <p>Si usted está desarrollando con un equipo, es posible que desee seguir incluyendo un archivo <code>.env.example</code> con su aplicación. Al poner valores en el archivo de configuración de ejemplo, otros desarrolladores de tu equipo pueden ver claramente qué variables de entorno son necesarias para ejecutar tu aplicación.</p>
 
                 </div>
               </div>
