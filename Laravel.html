@@ -293,7 +293,33 @@ php artisan serve</code></pre>
                   <p>Para hacer esto más fácil, Laravel utiliza la librería PHP <code>DotEnv</code>. En una nueva instalación de Laravel, el directorio raíz de su aplicación contendrá un archivo <code>.env.example</code> que define muchas variables de entorno comunes. Durante el proceso de instalación de Laravel, este archivo se copiará automáticamente a <code>.env</code>.</p>
                   <p>El archivo .env por defecto de Laravel contiene algunos valores de configuración comunes que pueden diferir en función de si su aplicación se ejecuta localmente o en un servidor web de producción. Estos valores se recuperan de varios archivos de configuración de Laravel dentro del directorio config utilizando la función <code>env</code> de Laravel.</p>
                   <p>Si usted está desarrollando con un equipo, es posible que desee seguir incluyendo un archivo <code>.env.example</code> con su aplicación. Al poner valores en el archivo de configuración de ejemplo, otros desarrolladores de tu equipo pueden ver claramente qué variables de entorno son necesarias para ejecutar tu aplicación.</p>
-
+                  <div class="alert alert-info">Cualquier variable de su archivo .env puede ser anulada por variables de entorno externas, como las variables de entorno a nivel de servidor o a nivel de sistema.</div>
+                  <h4> ... </h4>
+                  <h3>Estructura de directorios</h3>
+                  <h4>Introducción</h4>
+                  <p>La estructura por defecto de la aplicación Laravel está pensada para proporcionar un buen punto de partida tanto para aplicaciones grandes como pequeñas. Pero eres libre de organizar tu aplicación como quieras. Laravel casi no impone restricciones sobre la ubicación de cualquier clase - siempre y cuando Composer pueda autocargar la clase.</p>
+                  <h4>El directorio raíz</h4>
+                  <h5>El directorio App</h5>
+                  <p>El directorio <code>app</code> contiene el código central de tu aplicación. Pronto exploraremos este directorio con más detalle; sin embargo, casi todas las clases de la aplicación estarán en este directorio.</p>
+                  <h5>El directorio Bootstrap</h5>
+                  <p>El directorio <code>bootstrap</code> contiene el archivo <code>app.php</code> que arranca el framework. Este directorio también contiene un directorio de caché que contiene archivos generados por el framework para optimizar el rendimiento, como los archivos de caché de rutas y servicios. Normalmente no debería ser necesario modificar ningún archivo de este directorio.</p>
+                  <h5>El directorio Config</h5>
+                  <p>El directorio <code>config</code>, como su nombre indica, contiene todos los archivos de configuración de la aplicación. Es una gran idea leer todos estos archivos y familiarizarse con todas las opciones disponibles.</p>
+                  <h5>El directorio Database</h5>
+                  <p>El directorio <code>database</code> contiene las migraciones de la base de datos, factories de modelos y semillas. Si lo deseas, también puedes utilizar este directorio para alojar una base de datos SQLite.</p>
+                  <h5>El directorio Lang</h5>
+                  <p>El directorio <code>lang</code> contiene todos los archivos de idioma de su aplicación.</p>
+                  <h5>El directorio Public</h5>
+                  <p>El directorio <code>public</code> contiene el archivo index.php, que es el punto de entrada para todas las solicitudes que entran en la aplicación y configura la carga automática. Este directorio también alberga los activos, como imágenes, JavaScript y CSS.</p>
+                  <h5>El directorio Resource</h5>
+                  <p>El directorio <code>resources</code> contiene las vistas y los recursos sin compilar, como CSS o JavaScript.</p>
+                  <h5>El directorio Routes</h5>
+                  <p>El directorio <code>routes</code> contiene todas las definiciones de rutas para la aplicación. Por defecto, varios archivos de rutas se incluyen con Laravel: <code>web.php</code>, <code>api.php</code>, <code>console.php</code>, y <code>channels.php</code>.</p>
+                  <p>El archivo <code>web.php</code> contiene rutas que el <code>RouteServiceProvider</code> coloca en el grupo de middleware web, que proporciona estado de sesión, protección CSRF y cifrado de cookies. Si tu aplicación no ofrece una API RESTful sin estado, lo más probable es que todas sus rutas estén definidas en el archivo web.php.</p>
+                  <p>El archivo <code>api.php</code> contiene rutas que el <code>RouteServiceProvider</code> coloca en el grupo api middleware. Estas rutas están diseñadas para ser sin estado, por lo que las solicitudes que entran en la aplicación a través de estas rutas están diseñadas para ser autenticadas a través de <a href="https://laravel.com/docs/9.x/sanctum">tokens</a> y no tendrán acceso al estado de la sesión.</p>
+                  <p>El archivo <code>console.php</code> es donde puedes definir todos los comandos de consola basados en closures. Cada cierre está vinculado a una instancia de comando permitiendo un enfoque simple para interactuar con los métodos IO de cada comando. Aunque este archivo no define rutas HTTP, define puntos de entrada (rutas) a su aplicación basados en la consola.</p>
+                  <p>El archivo <code>channels.php</code> es donde se pueden puede registrar todos los canales de transmisión de eventos que la aplicación soporta.</p>
+                
                 </div>
               </div>
             </article>
