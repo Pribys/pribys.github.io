@@ -339,21 +339,21 @@ php artisan serve</code></pre>
                   <h4>Utilizar PHP</h4>
                   <h5>PHP y Blade</h5>
                   <p>En el pasado, la mayoría de las aplicaciones PHP renderizaban HTML al navegador usando plantillas HTML simples intercaladas con sentencias echo de PHP que renderizaban datos que eran recuperados de una base de datos durante la petición:</p>
-                  <pre class="prettyprint source lang-php"><code>&lt;div>
+                  <pre class="prettyprint source lang-php"><code>%8Bdiv>
                     <?php foreach ($users as $user): ?>
                         Hello, <?php echo $user->name; ?> <br />
                     <?php endforeach; ?>
-                    &lt;/div></code></pre>
+                    %8B/div></code></pre>
                   <p>En Laravel, este enfoque para la representación de HTML todavía se puede lograr utilizando <a href="https://laravel.com/docs/9.x/views">vistas</a> y <a href="https://laravel.com/docs/9.x/blade">Blade</a>. Blade es un lenguaje de plantillas extremadamente ligero que proporciona una sintaxis conveniente y breve para mostrar e iterar sobre datos y más:</p>
-                  <pre class="prettyprint source lang-php"><code>&lt;div>
+                  <pre class="prettyprint source lang-php"><code>%8Bdiv>
                     @foreach ($users as $user)
                         Hello, {{ $user->name }} <br />
                     @endforeach
-                    &lt;/div></code></pre>
+                    %8B/div></code></pre>
                   <p>Cuando se construyen aplicaciones de esta manera, los envíos de formularios y otras interacciones de página suelen recibir un documento HTML completamente nuevo del servidor y el navegador vuelve a renderizar toda la página. Incluso hoy en día, muchas aplicaciones admiten esta manera de construir el frontend utilizando simples plantillas Blade.</p>
                   <b>Expectativas de crecimiento</b>
                   <p>Sin embargo, a medida que las expectativas de los usuarios con respecto a las aplicaciones web han ido madurando, muchos desarrolladores se han encontrado con la necesidad de construir frontends más dinámicos con interacciones que se sientan más pulidas. A la luz de esto, algunos desarrolladores optan por comenzar a construir el frontend de su aplicación utilizando frameworks de JavaScript como Vue y React.</p>
-                  <p>Otros, que prefieren quedarse con el lenguaje de backend con el que se sienten cómodos, han desarrollado soluciones que permiten la construcción de interfaces de usuario de aplicaciones web modernas mientras siguen utilizando principalmente el lenguaje de backend de su elección. Por ejemplo, en el ecosistema Rails, esto ha impulsado la creación de bibliotecas como Turbo Hotwire y Stimulus.</p>
+                  <p>Otros, que prefieren quedarse con el lenguaje de backend con el que se sienten cómodos, han desarrollado soluciones que permiten la construcción de interfaces de usuario de aplicaciones web modernas mientras siguen utilizando principalmente el lenguaje de backend de su elección. Por ejemplo, en el ecosistema <a href="https://rubyonrails.org/">Rails</a>, esto ha impulsado la creación de bibliotecas como <a href="https://turbo.hotwired.dev/">Turbo Hotwire</a> y <a href="https://stimulus.hotwired.dev/">Stimulus</a>.</p>
                   <p>En el ecosistema Laravel, la necesidad de crear interfaces modernas y dinámicas utilizando principalmente PHP ha llevado a la creación de Laravel Livewire y Alpine.js.</p>
 
                 </div>
