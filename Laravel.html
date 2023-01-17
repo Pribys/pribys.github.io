@@ -339,13 +339,13 @@ php artisan serve</code></pre>
                   <h4>Utilizar PHP</h4>
                   <h5>PHP y Blade</h5>
                   <p>En el pasado, la mayoría de las aplicaciones PHP renderizaban HTML al navegador usando plantillas HTML simples intercaladas con sentencias echo de PHP que renderizaban datos que eran recuperados de una base de datos durante la petición:</p>
-                  <pre class="prettyprint source lang-php"><code>%8Bdiv>
+                  <pre class="prettyprint source lang-blade"><code><div>
                     <?php foreach ($users as $user): ?>
                         Hello, <?php echo $user->name; ?> <br />
                     <?php endforeach; ?>
                     %8B/div></code></pre>
                   <p>En Laravel, este enfoque para la representación de HTML todavía se puede lograr utilizando <a href="https://laravel.com/docs/9.x/views">vistas</a> y <a href="https://laravel.com/docs/9.x/blade">Blade</a>. Blade es un lenguaje de plantillas extremadamente ligero que proporciona una sintaxis conveniente y breve para mostrar e iterar sobre datos y más:</p>
-                  <pre class="prettyprint source lang-php"><code>%8Bdiv>
+                  <pre class="prettyprint source lang-blade"><code><div>
                     @foreach ($users as $user)
                         Hello, {{ $user->name }} <br />
                     @endforeach
