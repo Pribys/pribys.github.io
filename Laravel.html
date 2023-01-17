@@ -331,7 +331,31 @@ php artisan serve</code></pre>
                   <p>El directorio <code>app</code> contiene una variedad de directorios adicionales como <code>Console</code>, <code>Http</code>, y <code>Providers</code>. Piense en los directorios <code>Console</code> y <code>Http</code> como una API en el núcleo de la aplicación. Tanto el protocolo HTTP como CLI son mecanismos para interactuar con la aplicación, pero en realidad no contienen lógica de aplicación. En otras palabras, son dos formas de emitir comandos a tu aplicación. El directorio <code>Console</code> contiene todos los comandos Artisan, mientras que el directorio <code>Http</code> contiene los controladores, middleware y peticiones.</p>
                   <p>Otros directorios más serán generados dentro del directorio <code>app</code> cuando utilices los comandos Artisan <code>make</code> para generar clases. Así, por ejemplo, el directorio <code>app/Jobs</code> no existirá hasta que ejecutes el comando Artisan <code>make:job</code> para generar una clase job.</p>
                   <div class="alert alert-info">Muchas de las clases en el directorio <code>app</code> pueden ser generadas por Artisan a través de comandos. Para revisar los comandos disponibles, ejecute el comando <code>php artisan list make</code> en su terminal.</div>
-                  
+                  <h5> ... </h5>
+                  <h3>Frontend</h3>
+                  <h4>Introducción</h4>
+                  <p>Laravel es un framework de backend que proporciona todas las características que necesita para construir aplicaciones web modernas, tales como <a href="https://laravel.com/docs/9.x/routing">enrutamiento</a>, <a href="https://laravel.com/docs/9.x/validation">validación</a>, <a href="https://laravel.com/docs/9.x/cache">almacenamiento en caché</a>, <a href="https://laravel.com/docs/9.x/queues">colas</a>, <a href="https://laravel.com/docs/9.x/filesystem">almacenamiento de archivos</a>, y mucho más. Sin embargo, creemos que es importante ofrecer a los desarrolladores una hermosa experiencia full-stack, incluyendo enfoques de gran alcance para la construcción del frontend de su aplicación.</p>
+                  <p>Hay dos formas principales de abordar el desarrollo frontend cuando se construye una aplicación con Laravel, y el enfoque que elijas está determinado por si deseas construir tu frontend aprovechando PHP o utilizando frameworks de JavaScript como Vue y React. Vamos a discutir estas dos opciones a continuación para que puedas tomar una decisión informada sobre el mejor enfoque para el desarrollo frontend para tu aplicación.</p>
+                  <h4>Utilizar PHP</h4>
+                  <h5>PHP y Blade</h5>
+                  <p>En el pasado, la mayoría de las aplicaciones PHP renderizaban HTML al navegador usando plantillas HTML simples intercaladas con sentencias echo de PHP que renderizaban datos que eran recuperados de una base de datos durante la petición:</p>
+                  <pre class="prettyprint source lang-php"><code><div>
+                    <?php foreach ($users as $user): ?>
+                        Hello, <?php echo $user->name; ?> <br />
+                    <?php endforeach; ?>
+                </div></code></pre>
+                  <p>En Laravel, este enfoque para la representación de HTML todavía se puede lograr utilizando <a href="https://laravel.com/docs/9.x/views">vistas</a> y <a href="https://laravel.com/docs/9.x/blade">Blade</a>. Blade es un lenguaje de plantillas extremadamente ligero que proporciona una sintaxis conveniente y breve para mostrar e iterar sobre datos y más:</p>
+                  <pre class="prettyprint source lang-php"><code><div>
+                    @foreach ($users as $user)
+                        Hello, {{ $user->name }} <br />
+                    @endforeach
+                </div></code></pre>
+                  <p>Cuando se construyen aplicaciones de esta manera, los envíos de formularios y otras interacciones de página suelen recibir un documento HTML completamente nuevo del servidor y el navegador vuelve a renderizar toda la página. Incluso hoy en día, muchas aplicaciones admiten esta manera de construir el frontend utilizando simples plantillas Blade.</p>
+                  <b>Expectativas de crecimiento</b>
+                  <p>Sin embargo, a medida que las expectativas de los usuarios con respecto a las aplicaciones web han ido madurando, muchos desarrolladores se han encontrado con la necesidad de construir frontends más dinámicos con interacciones que se sientan más pulidas. A la luz de esto, algunos desarrolladores optan por comenzar a construir el frontend de su aplicación utilizando frameworks de JavaScript como Vue y React.</p>
+                  <p>Otros, que prefieren quedarse con el lenguaje de backend con el que se sienten cómodos, han desarrollado soluciones que permiten la construcción de interfaces de usuario de aplicaciones web modernas mientras siguen utilizando principalmente el lenguaje de backend de su elección. Por ejemplo, en el ecosistema Rails, esto ha impulsado la creación de bibliotecas como Turbo Hotwire y Stimulus.</p>
+                  <p>En el ecosistema Laravel, la necesidad de crear interfaces modernas y dinámicas utilizando principalmente PHP ha llevado a la creación de Laravel Livewire y Alpine.js.</p>
+
                 </div>
               </div>
             </article>
