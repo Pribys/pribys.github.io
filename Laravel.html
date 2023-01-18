@@ -415,10 +415,13 @@ php artisan serve</code></pre>
                   <p>Laravel Breeze también puede armar una API de autenticación, lista para autenticar aplicaciones JavaScript modernas como las impulsadas por Next, Nuxt y otros. Para empezar, especifica la pila api como tu pila requerida cuando ejecutes el comando Artisan <code>breeze:install:</code></p>
                   <pre><code data-theme="olaolu-palenight" data-lang="shell" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #7580B850;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #BFC7D5;">php </span><span style="color: #BFC7D5;">artisan</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">breeze:install</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">api</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #BFC7D5;">php </span><span style="color: #BFC7D5;">artisan</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">migrate</span></div></code></pre>
                   <p>Durante la instalación, Breeze añadirá una variable de entorno <code>FRONTEND_URL</code> al archivo <code>.env</code> de la aplicación. Esta URL debe ser la URL de la aplicación JavaScript. Normalmente será <code>http://localhost:3000</code> durante el desarrollo local. Adicionalmente, debes asegurarte de que la <code>APP_URL</code> esté establecida en <code>http://localhost:8000</code>, que es la URL por defecto utilizada por el comando Artisan serve.</p>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-                  <p></p>
+                  <h6>Implementación de referencia de Next.js</h6>
+                  <p>Finalmente, estás listo para emparejar este backend con el frontend de tu elección. Una implementación de referencia para Next del frontend Breeze está <a href="https://github.com/laravel/breeze-next">disponible en GitHub</a>. Este frontend está mantenido por Laravel y contiene la misma interfaz de usuario que los stacks tradicionales Blade e Inertia proporcionados por Breeze.</p>
+                  <h4>Laravel Jetstream</h4>
+                  <p>Mientras que Laravel Breeze proporciona un punto de partida simple y mínimo para la construcción de una aplicación Laravel, Jetstream aumenta esa funcionalidad con características más robustas y pilas de tecnología frontend adicionales. Para los recién llegados a Laravel, se recomienda aprender las herramientas de Laravel Breeze antes de pasar a Laravel Jetstream.</p>
+                  <p>Jetstream proporciona un andamiaje de aplicación con un bonito diseño para Laravel e incluye inicio de sesión, registro, verificación de correo electrónico, autenticación de dos factores, gestión de sesiones, soporte de API a través de Laravel Sanctum y gestión de equipos opcional. Jetstream está diseñado utilizando Tailwind CSS y ofrece la opción de andamiaje frontend impulsado por Livewire o Inertia.</p>
+                  <p>La documentación completa para la instalación de Laravel Jetstream se puede encontrar en la <a href="https://inertiajs.com/server-side-rendering">documentación oficial de Jetstream</a>.</p>
+                  
 
                 </div>
               </div>
