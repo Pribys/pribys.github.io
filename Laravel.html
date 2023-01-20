@@ -452,13 +452,13 @@ php artisan serve</code></pre>
                   <h5>Optimización del Autoloader</h5>
                   <p>Al desplegar en producción, asegúrate de que estás optimizando el mapa de autocarga de clases de Composer para que Composer pueda encontrar rápidamente el archivo adecuado para cargar una clase determinada:</p>
                   <pre><code data-theme="olaolu-palenight" data-lang="shell" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #7580B850;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #BFC7D5;">composer </span><span style="color: #BFC7D5;">install</span><span style="color: #BFC7D5;"> </span><span style="color: #82AAFF;">--optimize-autoloader</span><span style="color: #BFC7D5;"> </span><span style="color: #82AAFF;">--no-dev</span></div></code></pre>
-                  <div class="alert alert-info">Cualquier variable del archivo <code>.env</code> puede ser anulada por variables de entorno externas, como las variables de entorno a nivel de servidor o a nivel de sistema.</div>
-                  <p>Además de optimizar el autocargador, siempre debes asegurarte de incluir un archivo <code>composer.lock</code> en el repositorio de control de código fuente de tu proyecto. Las dependencias del proyecto se pueden instalar mucho más rápido cuando está presente el archivo <code>composer.lock</code>.</p>
+                  <div class="alert alert-info">Además de optimizar el autoloader, siempre debes asegurarte de incluir un archivo <code>composer.lock</code> en el repositorio de control de código fuente de tu proyecto. Las dependencias del proyecto se pueden instalar mucho más rápido cuando está presente el archivo <code>composer.lock</code>.</div>
                   <h5>Optimización de la carga de configuraciones</h5>
                   <p>Cuando despliegues tu aplicación en producción, debes asegurarte de ejecutar el comando Artisan <code>config:cache</code> durante el proceso de despliegue:</p>
                   <pre><code data-theme="olaolu-palenight" data-lang="shell" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #7580B850;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #BFC7D5;">php </span><span style="color: #BFC7D5;">artisan</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">config:cache</span></div></code></pre>
-                  <div class="alert alert-info">Cualquier variable de su archivo .env puede ser anulada por variables de entorno externas, como las variables de entorno a nivel de servidor o a nivel de sistema.</div>
-                  
+                  <p>Este comando combinará todos los archivos de configuración de Laravel en un único archivo en caché, lo que reduce en gran medida el número de viajes que el framework debe hacer al sistema de archivos al cargar los valores de configuración.</p>
+                  <div class="alert alert-info">Si ejecutas el comando <code>config:cache</code> durante el proceso de despliegue, debes asegurarte de que sólo estás llamando a la función env desde dentro de tus ficheros de configuración. Una vez que la configuración se ha almacenado en caché, el archivo <code>.env</code>.env no se cargará y todas las llamadas a la función <code>env</code> para variables <code>.env</code> devolverán <code>null</code>.</div>
+                  <h5>Optimizar la carga de las rutas</h5>
                   <p></p>
 
                 </div>
