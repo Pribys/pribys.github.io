@@ -459,6 +459,24 @@ php artisan serve</code></pre>
                   <p>Este comando combinará todos los archivos de configuración de Laravel en un único archivo en caché, lo que reduce en gran medida el número de viajes que el framework debe hacer al sistema de archivos al cargar los valores de configuración.</p>
                   <div class="alert alert-info">Si ejecutas el comando <code>config:cache</code> durante el proceso de despliegue, debes asegurarte de que sólo estás llamando a la función env desde dentro de tus ficheros de configuración. Una vez que la configuración se ha almacenado en caché, el archivo <code>.env</code>.env no se cargará y todas las llamadas a la función <code>env</code> para variables <code>.env</code> devolverán <code>null</code>.</div>
                   <h5>Optimizar la carga de las rutas</h5>
+                  <p>Si estás construyendo una aplicación grande con muchas rutas, debes asegurarte de estar ejecutando el comando de Artisan <code>route:cache</code> durante el proceso de despliegue:</p>
+                  <pre><code data-theme="olaolu-palenight" data-lang="shell" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #7580B850;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #BFC7D5;">php </span><span style="color: #BFC7D5;">artisan</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">route:cache</span></div></code></pre>
+                  <p>Este comando reduce todos los registros de rutas en una única llamada a un método dentro de un archivo en caché, lo que mejora el rendimiento del registro de rutas cuando hay cientos de rutas registradas.</p>
+                  <h5>Optimizar la carga de las vistas</h5>
+                  <p>Cuando despliegues la aplicación en producción, debes asegurarte de ejecutar el comando de Artisan <code>view:cache</code> durante el proceso de despliegue:</p>
+                  <pre><code data-theme="olaolu-palenight" data-lang="shell" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #7580B850;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #BFC7D5;">php </span><span style="color: #BFC7D5;">artisan</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">view:cache</span></div></code></pre>
+                  <p>Este comando precompila todas las vistas de Blade para que no se compilen bajo demanda, mejorando el rendimiento de cada petición que devuelve una vista.</p>
+                  <h4>Modo de depuración</h4>
+                  <p>La opción debug en el archivo de configuración <code>config/app.php</code> determina cuánta información sobre un error se muestra realmente al usuario. Por defecto, esta opción está configurada para respetar el valor de la variable de entorno <code>APP_DEBUG</code>, que está almacenada en el archivo <code>.env</code> de su aplicación.</p>
+                  <p>En un entorno de producción, este valor debe ser siempre <code>false</code>. Si la variable <code>APP_DEBUG</code> se establece en <code>true</code> en producción, se arriesga a exponer valores de configuración sensibles a los usuarios finales de la aplicación.</p>
+                  <h4>Despliegue con Forge / Vapor</h4>
+                  <h5>Laravel Forge</h5>
+                  <p>Si no estás listo para gestionar la configuración de tu propio servidor o no te sientes cómodo configurando todos los servicios necesarios para ejecutar una aplicación Laravel robusta, Laravel Forge es una alternativa maravillosa.</p>
+                  <p>Laravel Forge puede crear servidores en varios proveedores de infraestructura como DigitalOcean, Linode, AWS, y otros. Además, Forge instala y gestiona todas las herramientas necesarias para construir aplicaciones Laravel robustas, como Nginx, MySQL, Redis, Memcached, Beanstalk, y más.</p>
+                  <div class="alert alert-info">¿Quieres una guía completa de despliegue con Laravel Forge? Echa un vistazo a la serie de vídeos Laravel Bootcamp y Forge disponible en <a href="https://laracasts.com/series/learn-laravel-forge-2022-edition">Laracasts</a>.</div>
+                  <h5>Laravel Vapor</h5>
+                  <p>Si necesitas una plataforma de despliegue sin servidor y autoescalable para Laravel, echa un vistazo a <a href="https://vapor.laravel.com/">Laravel Vapor</a>. Laravel Vapor es una plataforma de despliegue sin servidor para Laravel, impulsada por AWS. Lanza tu infraestructura Laravel en Vapor y enamórate de la simplicidad escalable sin servidor. Laravel Vapor está ajustado por los creadores de Laravel para trabajar sin problemas con el framework para que puedas seguir escribiendo tus aplicaciones Laravel exactamente como estás acostumbrado.</p>
+                  <p></p>
                   <p></p>
 
                 </div>
