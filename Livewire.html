@@ -161,7 +161,7 @@
                                         <pre
                                             class="flex">        <code data-theme="material-theme-palenight" data-lang="shell" class="torchlight w-full min-w-full pr-4" style="min-height: content;background-color: #292D3E; --theme-selection-background: #00000080;"><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">artisan</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:livewire</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">counter</span></div></code>    </pre>
                                     </div>
-                                    <p>Ejecutar este comando generará la siguiente pareja de archivos:</p>
+                                    <p>Ejecutar este comando generará la siguiente pareja de archivos. Uno es el controlador y el otro la vista:</p>
                                     <div class="mb-12 rounded-lg" style="background: #292D3E">
                                         <div class="relative">
                                             <span
@@ -182,6 +182,12 @@
                                     </div>
                                     <p>Agreguemos algo de texto a la vista para que podamos ver algo tangible en el
                                         navegador.</p>
+                                    <div class="alert alert-info">La vista de un componente Livewire debe tener un único elemento <code>div</code> raiz</div>
+                                    <pre style="margin: 0;" class="scrollbar-none flex">            <code data-theme="material-theme-palenight" data-lang="html" class="torchlight min-w-full pr-4 md:py-10" style="min-height: content;background-color: #292D3E; --theme-selection-background: #00000080;"><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">div</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">h1</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Hello World!</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">h1</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">div</span><span style="color: #89DDFF;">&gt;</span></div></code>        </pre>
+         
+
+
+
                                 </div>
                             </div>
                         </article>
