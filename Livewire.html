@@ -364,7 +364,11 @@
                                     <table>
                                         <thead>
                                         <tr>
+<<<<<<< HEAD
                                           <th  style="font-size: x-large">Element Tag</th>
+=======
+                                          <th style="font-size: x-large">Element Tag</th>
+>>>>>>> 7234fb4abfd5ef9d01511ab333bf0b7605b0df01
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -384,17 +388,9 @@
                                           <td style="font-size: large"><code>&lt;textarea&gt;</code></td>
                                         </tr>
                                         </tbody>
-                                    </table>
-                                    <h5>Vincular datos anidados</h5>
-                                    <p>Livewire admite la vinculación a datos anidados dentro de matrices utilizando la notación de puntos:</p>
-                                    <pre  class="flex">        <code data-theme="material-theme-palenight" data-lang="html" class="torchlight w-full min-w-full pr-4" style="min-height: content;background-color: #292D3E; --theme-selection-background: #00000080;"><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">input</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">type</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">wire:model</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">parent.message</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div></code>    </pre>
-                                    <h5>Retardo de entrada</h5>
-                                    <p>Por defecto, Livewire aplica un retardo de 150 ms a las entradas de texto. Esto evita que se envíen demasiadas peticiones de red cuando un usuario teclea en un campo de texto.</p>
-                                    <p>Si quieres anular este valor por defecto (o añadirlo a una entrada que no sea de texto), Livewire ofrece un modificador "debounce". Para aplicar un rebote de medio segundo a una entrada, se debe incluir el modificador de la siguiente manera:</p>
-                                    <pre  class="flex">        <code data-theme="material-theme-palenight" data-lang="html" class="torchlight w-full min-w-full pr-4" style="min-height: content;background-color: #292D3E; --theme-selection-background: #00000080;"><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">input</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">type</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">wire:model.debounce.500ms</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">name</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div></code>    </pre>
-                                    <h5>Actualización lenta</h5>
-                                    <p>Por defecto, Livewire envía una petición al servidor después de cada evento <code>input</code> (o <code>change</code> en algunos casos). Esto está bien para cosas como los elementos <code><select></code> que no suelen enviar actualizaciones rápidas, sin embargo, es innecesario para los campos de texto que se actualizan a medida que el usuario escribe.</p>
-                                    <p>En esos casos, puedes usar el modificador de directiva <code>lazy</code> para escuchar el evento de cambio nativo.</p>
+                                        </table>
+                                    <p></p>
+                                    <p></p>
                                     <p></p>
                                     <p></p>
                                 </div>
