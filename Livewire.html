@@ -478,9 +478,68 @@
                                     <p>Si la acción requiere algún servicio que deba ser resuelto a través del contenedor de inyección de dependencias de Laravel, puedes listarlo en el código de la acción antes de cualquier parámetro adicional:</p>
                                     <pre  class="flex">        <code data-theme="material-theme-palenight" data-lang="php" class="torchlight w-full min-w-full pr-4" style="min-height: content;background-color: #292D3E; --theme-selection-background: #00000080;"><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">addTodo</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">TodoService</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">todoService</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">id</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">name</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">...</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #89DDFF;">}</span></div></code>    </pre>
                                     <h4>Modificadores de evento</h4>
-                                    <p></p>
-                                    <p></p>
-                                    <p></p>
+                                    <p>Como has visto en el ejemplo con <b>keydown</b>, las directivas Livewire a veces ofrecen "modificadores" para añadir funcionalidad extra a un evento. A continuación se muestran los modificadores disponibles que se pueden utilizar con cualquier evento.</p>
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                          <th>Modifier</th>
+                                          <th>Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                          <td>stop</td>
+                                          <td>Equivalent of <code>event.stopPropagation()</code></td>
+                                        </tr>
+                                        <tr>
+                                          <td>prevent</td>
+                                          <td>Equivalent of <code>event.preventDefault()</code></td>
+                                        </tr>
+                                        <tr>
+                                          <td>self</td>
+                                          <td>Only triggers an action if the event was triggered on itself. This prevents outer elements from catching events that were triggered from a child element. (Like often in the case of registering a listener on a modal backdrop)</td>
+                                        </tr>
+                                        <tr>
+                                          <td>debounce.150ms</td>
+                                          <td>Adds an Xms debounce to the handling of the action.</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <h5>Modificadores keydown</h5>
+                                    <p>Para escuchar teclas específicas en eventos keydown, puedes pasar el nombre de la tecla como modificador. Se puede utilizar directamente cualquier nombre de tecla válido expuesto a través de <a href="https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values">KeyboardEvent.key</a> como modificador convirtiéndolo a kebab-case.</p>
+                                    <p>Aquí tienes una lista rápida de algunos de los más comunes que puedes necesitar:</p>
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                          <th>Native Browser Event</th>
+                                          <th>Livewire Modifier</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                          <td>Backspace</td>
+                                          <td>backspace</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Escape</td>
+                                          <td>escape</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Shift</td>
+                                          <td>shift</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Tab</td>
+                                          <td>tab</td>
+                                        </tr>
+                                        <tr>
+                                          <td>ArrowRight</td>
+                                          <td>arrow-right</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <pre  class="flex">        <code data-theme="material-theme-palenight" data-lang="html" class="torchlight w-full min-w-full pr-4" style="min-height: content;background-color: #292D3E; --theme-selection-background: #00000080;"><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">input</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">wire:keydown.page-down</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">foo</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div></code>    </pre>
+                                    <p>En el ejemplo anterior, el evento sólo será llamado si <code>event.key</code> es igual a 'PageDown'.</p>
                                     <p></p>
                                 </div>
                             </div>
